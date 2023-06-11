@@ -10,9 +10,6 @@ using ConfigManager.UI;
 using HarmonyLib;
 using UnityEngine;
 using UniverseLib.Input;
-#if UNHOLLOWER
-using UnhollowerRuntimeLib;
-#endif
 #if INTEROP
 using Il2CppInterop.Runtime.Injection;
 #endif
@@ -24,7 +21,7 @@ namespace ConfigManager
 #if MONO
         : BaseUnityPlugin
 #else
-        : BepInEx.IL2CPP.BasePlugin
+        : BepInEx.Unity.IL2CPP.BasePlugin
 #endif
     {
         public const string GUID = "com.sinai.BepInExConfigManager";

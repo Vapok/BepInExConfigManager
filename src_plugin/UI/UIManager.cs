@@ -18,7 +18,7 @@ using HarmonyLib;
 using UniverseLib.UI.Panels;
 using System.IO;
 #if CPP
-using BepInEx.IL2CPP;
+using BepInEx.Unity.IL2CPP;
 #endif
 
 namespace ConfigManager.UI

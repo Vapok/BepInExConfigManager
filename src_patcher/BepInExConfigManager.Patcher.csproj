@@ -46,8 +46,8 @@
       <HintPath>..\lib\BepInEx.Preloader.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="BepInEx.IL2CPP">
-      <HintPath>..\lib\BepInEx.IL2CPP.dll</HintPath>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>..\lib\BepInEx.Unity.IL2CPP.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

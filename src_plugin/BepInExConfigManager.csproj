@@ -16,7 +16,7 @@
     <PropertyGroup Condition="'$(Configuration)' == 'Release_IL2CPP'">
         <OutputPath>..\Release\BepInExConfigManager.Il2Cpp\plugins\</OutputPath>
         <TargetFramework>net472</TargetFramework>
-        <DefineConstants>CPP,UNHOLLOWER</DefineConstants>
+        <DefineConstants>CPP,INTEROP</DefineConstants>
         <AssemblyName>BepInExConfigManager.Il2Cpp</AssemblyName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Release_IL2CPP_CoreCLR'">
@@ -40,15 +40,16 @@
     <ItemGroup Condition="'$(Configuration)'=='Release_Mono'">
         <PackageReference Include="UniverseLib.Mono" Version="1.5.1" />
     </ItemGroup>
-    <!-- il2cpp Unhollower nuget -->
-    <ItemGroup Condition="'$(Configuration)'=='Release_IL2CPP'">
-        <PackageReference Include="Il2CppAssemblyUnhollower.BaseLib" Version="0.4.22" IncludeAssets="Compile" />
-        <PackageReference Include="UniverseLib.IL2CPP.Unhollower" Version="1.5.1" />
-    </ItemGroup>
     <!-- il2cpp Interop nuget -->
     <ItemGroup Condition="'$(Configuration)'=='Release_IL2CPP_CoreCLR'">
-        <PackageReference Include="Il2CppInterop.Common" Version="1.0.0" IncludeAssets="Compile" />
-        <PackageReference Include="Il2CppInterop.Runtime" Version="1.0.0" IncludeAssets="Compile" />
+        <PackageReference Include="Il2CppInterop.Common" Version="1.4.5" IncludeAssets="Compile" />
+        <PackageReference Include="Il2CppInterop.Runtime" Version="1.4.5" IncludeAssets="Compile" />
+        <PackageReference Include="UniverseLib.IL2CPP.Interop" Version="1.5.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)'=='Release_IL2CPP'">
+        <PackageReference Include="Il2CppInterop.Common" Version="1.4.5" IncludeAssets="Compile" />
+        <PackageReference Include="Il2CppInterop.Runtime" Version="1.4.5" IncludeAssets="Compile" />
         <PackageReference Include="UniverseLib.IL2CPP.Interop" Version="1.5.1" />
     </ItemGroup>
 
@@ -74,47 +75,44 @@
             <HintPath>..\lib\BepInEx.Core.dll</HintPath>
             <Private>False</Private>
         </Reference>
-        <Reference Include="BepInEx.IL2CPP">
-            <HintPath>..\lib\BepInEx.IL2CPP.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-    </ItemGroup>
-    <!-- il2cpp unhollower -->
-    <ItemGroup Condition="'$(Configuration)' == 'Release_IL2CPP'">
-        <Reference Include="Il2Cppmscorlib">
-            <HintPath>..\lib\unhollowed\Il2Cppmscorlib.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-        <Reference Include="Il2CppSystem.Core">
-            <HintPath>..\lib\unhollowed\Il2CppSystem.Core.dll</HintPath>
+        <Reference Include="BepInEx.Unity.IL2CPP">
+            <HintPath>..\lib\BepInEx.Unity.IL2CPP.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="Il2Cppmscorlib">
-            <HintPath>..\lib\unhollowed\Il2Cppmscorlib.dll</HintPath>
+            <HintPath>..\lib\interop\Il2Cppmscorlib.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="Il2CppSystem.Core">
-            <HintPath>..\lib\unhollowed\Il2CppSystem.Core.dll</HintPath>
+            <HintPath>..\lib\interop\Il2CppSystem.Core.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Il2Cppmscorlib">
+            <HintPath>..\lib\interop\Il2Cppmscorlib.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Il2CppSystem.Core">
+            <HintPath>..\lib\interop\Il2CppSystem.Core.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-            <HintPath>..\lib\unhollowed\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>..\lib\interop\UnityEngine.CoreModule.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
-            <HintPath>..\lib\unhollowed\UnityEngine.TextRenderingModule.dll</HintPath>
+            <HintPath>..\lib\interop\UnityEngine.TextRenderingModule.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.UI">
-            <HintPath>..\lib\unhollowed\UnityEngine.UI.dll</HintPath>
+            <HintPath>..\lib\interop\UnityEngine.UI.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.UIModule">
-            <HintPath>..\lib\unhollowed\UnityEngine.UIModule.dll</HintPath>
+            <HintPath>..\lib\interop\UnityEngine.UIModule.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.IMGUIModule">
-            <HintPath>..\lib\unhollowed\UnityEngine.IMGUIModule.dll</HintPath>
+            <HintPath>..\lib\interop\UnityEngine.IMGUIModule.dll</HintPath>
             <Private>False</Private>
         </Reference>
     </ItemGroup>
